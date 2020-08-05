@@ -4,7 +4,7 @@
       code: 1,  
     },
   },
-  referenceStore: {
+  assetStore: {
     circular: {
       directory: '/storage',
       offsetFileSizeBytes: 1024 * 1024,
