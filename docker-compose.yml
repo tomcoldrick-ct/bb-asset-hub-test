@@ -1,0 +1,27 @@
+version: '3.0'
+services:
+  bb-storage:
+    image: buildbarn/bb-storage:20200802T055539Z-f0281e2
+    command: /config/storage.jsonnet
+    ports:
+    - "5501:5501"
+    volumes:
+    - "./storage-cas:/cas"
+    - "./storage-ac:/ac"
+    - "./config:/config"
+  bb-asset:
+    image: bazel/cmd/bb_asset_hub:bb_asset_hub_container
+    command: /config/asset.jsonnet
+    ports:
+    - "5502:5502"
+    volumes:
+    - "./storage-asset:/storage"
+    - "./config:/config"
+  buildstream:
+    image: coldtom/buildstream:remote-asset
+    privileged: true
+    volumes:
+    - "./bst-project:/bst-project"
+    working_dir: /bst-project
+    command:
+    - ./test.sh
