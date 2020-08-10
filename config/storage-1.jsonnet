@@ -9,7 +9,7 @@ local common = import 'common.libsonnet';
         offsetCacheSize: 10000,
         dataFileSizeBytes: 10 * 1024 * 1024 * 1024,
         dataAllocationChunkSizeBytes: 16 * 1024 * 1024,
-        instances: ['', 'remote-execution'],
+        instances: ['', 'bb-event-service', 'remote-execution'],
       },
     },
     actionCache: {
@@ -23,9 +23,9 @@ local common = import 'common.libsonnet';
       },
     },
   },
-  httpListenAddress: ':6981',
+  httpListenAddress: ':6982',
   grpcServers: [{
-    listenAddresses: [':8981'],
+    listenAddresses: [':8982'],
     authenticationPolicy: { allow: {} },
   }],
   allowAcUpdatesForInstances: ['', 'bb-event-service', 'remote-execution'],

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-bst --colors build foo.bst
-bst --colors artifact delete foo.bst
-bst --colors artifact pull foo.bst
+bst --colors build hello.bst
+bst --colors artifact delete hello.bst
+bst --colors artifact pull --deps none hello.bst

@@ -1,9 +1,15 @@
 {
-  contentAddressableStorage: {
-    'error': {
-      code: 1,  
-    },
+  fetcher: {
+    caching: {
+      fetcher: {
+        'error': {
+          code: 5,
+          message: "Asset Not Found", 
+        }
+      }
+    }
   },
+
   assetStore: {
     circular: {
       directory: '/storage',
@@ -11,14 +17,15 @@
       offsetCacheSize: 1000,
       dataFileSizeBytes: 100 * 1024 * 1024,
       dataAllocationChunkSizeBytes: 1048576,
-      instances: ['bb-event-service', 'remote-execution'],
+      instances: [''],
     },
   },
-  httpListenAddress: ':7982',
+  httpListenAddress: ':1111',
   grpcServers: [{
-    listenAddresses: [':5502'],
+    listenAddresses: [':4401'],
     authenticationPolicy: { allow: {} },
   }],
   allowUpdatesForInstances: [''],
-  maximumMessageSizeBytes: 16 * 1024 * 1024 * 1024,
+  maximumMessageSizeBytes: 16 * 1024 * 1024,
 }
+
