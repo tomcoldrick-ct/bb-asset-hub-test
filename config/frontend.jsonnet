@@ -7,6 +7,7 @@ local common = import 'common.libsonnet';
     listenAddresses: [':8980'],
     authenticationPolicy: { allow: {} },
   }],
+  allowAcUpdatesForInstances: [''],
   schedulers: {
     'remote-execution': { address: 'scheduler:8984' },
     '': {address: 'scheduler:8984' },

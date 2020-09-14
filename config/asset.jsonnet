@@ -1,15 +1,30 @@
 {
   fetcher: {
-    caching: {
+    actionCache: {
       fetcher: {
         'error': {
           code: 5,
-          message: "Asset Not Found", 
-        }
-      }
-    }
+          message: "Asset Not Found",
+        },
+      },
+      actionCache: {
+       address: "frontend:8980",
+      },
+    },
   },
-
+  pusher: {
+    actionCache: {
+      pusher: {
+        'error': {
+          code: 0,
+          message: "Pushed through to last point",
+        },
+      },
+      actionCache: {
+        address: "frontend:8980",
+      },
+    },
+  },
   assetStore: {
     circular: {
       directory: '/storage',

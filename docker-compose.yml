@@ -82,7 +82,7 @@ services:
     - runner-ubuntu16-04
 
   bb-asset:
-    image: bazel/cmd/bb_asset_hub:bb_asset_hub_container
+    image: bazel/cmd/bb_remote_asset:bb_remote_asset_container
     command: /config/asset.jsonnet
     ports:
     - "4401:4401"
